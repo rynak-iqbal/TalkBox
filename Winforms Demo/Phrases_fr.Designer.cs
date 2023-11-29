@@ -1,6 +1,6 @@
 ﻿namespace Winforms_Demo
 {
-    partial class Phrases
+    partial class Phrases_fr
     {
         /// <summary> 
         /// Required designer variable.
@@ -35,9 +35,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "Phrases";
+            this.Name = "Phrases_fr";
             this.Size = new System.Drawing.Size(414, 236);
-            this.Load += new System.EventHandler(this.Phrases_Load_2);
             this.ResumeLayout(false);
 
         }

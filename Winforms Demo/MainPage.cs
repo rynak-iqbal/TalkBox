@@ -40,8 +40,7 @@ namespace Winforms_Demo
         private void hoverSpeak(object sender, EventArgs e)
         {
             string s = (sender as Button).Text;
-            //speech.Volume = 70;
-            //speech.SpeakAsync(s);
+
 
 
             ProcessStartInfo startInfo = new ProcessStartInfo();
@@ -58,25 +57,51 @@ namespace Winforms_Demo
             }
 
 
+            ((Button)sender).BackColor = Color.Red;
+
 
 
         }
         private void hoverLeave(object sender, EventArgs e)
         {
             //speech.SpeakAsyncCancelAll();
+            ((Button)sender).BackColor = Color.White;
         }
 
-        //private void phrases_Click(object sender, EventArgs e)
-        //{
+        private void phrases_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Phrases Clicked");
 
-        //    phrases2.Visible = true;
-        //    phrases2.Select();
-        //    Control firstControlWithTabIndex = FindControlByTabIndex(phrases2, 4);
-        //    if (firstControlWithTabIndex != null)
-        //    {
-        //        firstControlWithTabIndex.Focus();
-        //    }
-        //}
+            music1.Visible = false;
+            sounds2.Visible = false;
+            audioBook1.Visible = false;
+            phrases1_fr.Visible = false;
+
+            phrases1.Visible = true;
+            phrases1.Select();
+            Control firstControlWithTabIndex = FindControlByTabIndex(phrases1, 4);
+            if (firstControlWithTabIndex != null)
+            {
+                firstControlWithTabIndex.Focus();
+            }
+        }
+        private void Phrases_fr_button_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Phrases_fr Clicked");
+
+            music1.Visible = false;
+            sounds2.Visible = false;
+            audioBook1.Visible = false;
+            phrases1.Visible = false;
+
+            phrases1_fr.Visible = true;
+            phrases1_fr.Select();
+            Control firstControlWithTabIndex = FindControlByTabIndex(phrases1_fr, 4);
+            if (firstControlWithTabIndex != null)
+            {
+                firstControlWithTabIndex.Focus();
+            }
+        }
 
         private Control FindControlByTabIndex(Control container, int tabIndex)
         {
@@ -92,42 +117,12 @@ namespace Winforms_Demo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //phrases2.Visible = false;
-            //music1.Visible = false;
-            //sounds1.Visible = false;
-            //audioBooks1.Visible = false;
+            phrases1.Visible = false;
+            phrases1_fr.Visible = false;
+            music1.Visible = false;
+            sounds2.Visible = false;
+            audioBook1.Visible = false;
         }
-
-        //public static void OpenPhrasesSub(string category, Form form)
-        //{
-        //    Console.WriteLine(form);
-        //    PhrasesSubMenu phrasesSub = new PhrasesSubMenu(category)
-        //    {
-        //        Location = new System.Drawing.Point(0, 0)
-        //    };
-
-        //    try
-        //    {
-        //        form.Controls.Add(phrasesSub);
-        //        Console.WriteLine(category);
-        //        phrasesSub.Visible = true;
-        //        phrasesSub.BringToFront();
-        //        phrasesSub.Select();
-        //        foreach (Control control in phrasesSub.Controls)
-        //        {
-        //            if (control.TabIndex == 20)
-        //            {
-        //                control.Focus();
-        //            }
-        //        }
-        //        Console.WriteLine("Phrases Sub reached");
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine(e);
-        //    }
-
-        //}
 
         private void phrases1_Load_1(object sender, EventArgs e)
         {
@@ -135,69 +130,138 @@ namespace Winforms_Demo
         }
 
 
-        //private void musicButton_click(object sender, EventArgs e)
-        //{
-        //    music1.Visible = true;
-        //    music1.BringToFront();
+        private void musicButton_click(object sender, EventArgs e)
+        {
+            music1.Visible = true;
+            music1.BringToFront();
 
-        //    music1.Select();
-        //    Control firstControlWithTabIndex = FindControlByTabIndex(music1, 1);
-        //    if (firstControlWithTabIndex != null)
-        //    {
-        //        firstControlWithTabIndex.Focus();
-        //    }
+            music1.Select();
+            Control firstControlWithTabIndex = FindControlByTabIndex(music1, 1);
+            Console.WriteLine(firstControlWithTabIndex);
+            if (firstControlWithTabIndex != null)
+            {
+                firstControlWithTabIndex.Focus();
+            }
 
-        //    phrases2.Visible = false;
-        //    sounds1.Visible = false;
-        //    audioBooks1.Visible = false;
-        //}
+            phrases1.Visible = false;
+            phrases1_fr.Visible = false;
+            sounds2.Visible = false;
+            audioBook1.Visible = false;
+        }
         private void musicPage_Load_1(object sender, EventArgs e)
         {
 
         }
 
-        //private void audioBooks_Click(object sender, EventArgs e)
-        //{
-        //    audioBooks1.Visible = true;
-        //    audioBooks1.BringToFront();
+        private void audioBooks_Click(object sender, EventArgs e)
+        {
+            audioBook1.Visible = true;
+            audioBook1.BringToFront();
 
-        //    audioBooks1.Select();
-        //    Control firstControlWithTabIndex = FindControlByTabIndex(audioBooks1, 1);
-        //    if (firstControlWithTabIndex != null)
-        //    {
-        //        firstControlWithTabIndex.Focus();
-        //    }
+            audioBook1.Select();
+            Control firstControlWithTabIndex = FindControlByTabIndex(audioBook1, 1);
+            if (firstControlWithTabIndex != null)
+            {
+                firstControlWithTabIndex.Focus();
+            }
 
-        //    phrases2.Visible = false;
-        //    music1.Visible = false;
-        //    sounds1.Visible = false;
-        //}
+            phrases1.Visible = false;
+            phrases1_fr.Visible = false;
+            music1.Visible = false;
+            sounds2.Visible = false;
+        }
 
-        private void sounds1_Load(object sender, EventArgs e)
+        private void sounds2_Load(object sender, EventArgs e)
         {
 
         }
 
-        //private void soundsButton_Click(object sender, EventArgs e)
-        //{
-        //    sounds1.Visible = true;
-        //    sounds1.BringToFront();
+        private void soundsButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Sounds button clicked");
 
-        //    sounds1.Select();
-        //    Control firstControlWithTabIndex = FindControlByTabIndex(sounds1, 1);
-        //    if (firstControlWithTabIndex != null)
-        //    {
-        //        firstControlWithTabIndex.Focus();
-        //    }
+            phrases1.Visible = false;
+            phrases1_fr.Visible = false;
+            music1.Visible = false;
+            audioBook1.Visible = false;
 
-        //    phrases2.Visible = false;
-        //    music1.Visible = false;
-        //    audioBooks1.Visible = false;
-        //}
+            sounds2.Visible = true;
+            sounds2.BringToFront();
+
+            sounds2.Select();
+            Control firstControlWithTabIndex = FindControlByTabIndex(sounds2, 1);
+            if (firstControlWithTabIndex != null)
+            {
+                firstControlWithTabIndex.Focus();
+            }
+
+
+        }
 
         private void audioBooks1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public static void OpenPhrasesSub(string category, Form form)
+        {
+            Console.WriteLine(form);
+            PhrasesSub phrasesSub = new PhrasesSub(category)
+            {
+                Location = new System.Drawing.Point(0, 0)
+            };
+
+            try
+            {
+                form.Controls.Add(phrasesSub);
+                Console.WriteLine(category);
+                phrasesSub.Visible = true;
+                phrasesSub.BringToFront();
+                phrasesSub.Select();
+                foreach (Control control in phrasesSub.Controls)
+                {
+                    if (control.TabIndex == 20)
+                    {
+                        control.Focus();
+                    }
+                }
+                Console.WriteLine("Phrases Sub reached");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+        }
+
+        internal static void OpenPhrasesSub_fr(string category, Form form)
+        {
+            Console.WriteLine(form);
+            PhrasesSub_fr phrasesSub_fr = new PhrasesSub_fr(category)
+            {
+                Location = new System.Drawing.Point(0, 0)
+            };
+
+            try
+            {
+                form.Controls.Add(phrasesSub_fr);
+                Console.WriteLine(category);
+                phrasesSub_fr.Visible = true;
+                phrasesSub_fr.BringToFront();
+                phrasesSub_fr.Select();
+                foreach (Control control in phrasesSub_fr.Controls)
+                {
+                    if (control.TabIndex == 20)
+                    {
+                        control.Focus();
+                    }
+                }
+                Console.WriteLine("Phrases Sub fr reached");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }

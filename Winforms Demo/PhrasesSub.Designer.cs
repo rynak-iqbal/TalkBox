@@ -1,6 +1,7 @@
-﻿namespace Winforms_Demo
+﻿
+namespace Winforms_Demo
 {
-    partial class Phrases
+    partial class PhrasesSub
     {
         /// <summary> 
         /// Required designer variable.
@@ -26,23 +27,20 @@
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-
         private void InitializeComponent()
-            {
+        {
             this.SuspendLayout();
             // 
-            // Phrases
+            // PhrasesSub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "Phrases";
+            this.AutoScroll = true;
+            this.Name = "PhrasesSub";
             this.Size = new System.Drawing.Size(414, 236);
-            this.Load += new System.EventHandler(this.Phrases_Load_2);
             this.ResumeLayout(false);
 
         }
-
-
 
         #endregion
     }

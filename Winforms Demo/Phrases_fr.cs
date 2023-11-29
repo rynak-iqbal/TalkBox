@@ -17,13 +17,13 @@ using System.Diagnostics;
 
 namespace Winforms_Demo
 {
-    public partial class Phrases : UserControl
+    public partial class Phrases_fr : UserControl
     {
 
         private List<Button> categoryButtons = new List<Button>();
         private Form form;
 
-        public Phrases()
+        public Phrases_fr()
         {
             InitializeComponent();
 
@@ -108,9 +108,8 @@ namespace Winforms_Demo
 
         public void loadCategories()
         {
-            string filePath = @"/home/pi/demo/Phrases.txt";
+            string filePath = @"/home/pi/demo/Phrases_fr.txt";
             //string filePath = @"C:\TalkBox\Phrases.txt";
-
 
 
             // Clear existing buttons
@@ -121,7 +120,7 @@ namespace Winforms_Demo
 
             categoryButtons.Clear();
 
-            int tabIndex = 4;
+            int tabIndex = 5;
             int btnHeight = 0;
             int btnNum = 0;
 
@@ -129,7 +128,7 @@ namespace Winforms_Demo
 
 
             List<string> categories = new List<string>();
-            string[] lines = File.ReadAllLines(filePath);
+            string[] lines = File.ReadAllLines(filePath, Encoding.GetEncoding("iso-8859-1"));
 
             try
             {
@@ -196,6 +195,8 @@ namespace Winforms_Demo
                 tabIndex++;
                 btnNum++;
 
+
+
                 Button deleteCategory = new Button();
                 this.SuspendLayout();
 
@@ -219,8 +220,6 @@ namespace Winforms_Demo
 
                 categoryButtons.Add(addCategory);
                 categoryButtons.Add(deleteCategory);
-
-
             }
 
             catch (Exception ex)
@@ -312,7 +311,7 @@ namespace Winforms_Demo
         {
             Console.WriteLine("Add Category!");
 
-            string filePath = @"/home/pi/demo/Phrases.txt";
+            string filePath = @"/home/pi/demo/Phrases_fr.txt";
             //string filePath = @"C:\TalkBox\Phrases.txt";
 
             using (var form = new Form())
@@ -384,6 +383,7 @@ namespace Winforms_Demo
             if (categoryButtons.Count > 0)
             {
                 Button btn = categoryButtons[0];
+                Console.WriteLine(btn.Text);
                 this.BringToFront();
                 btn.Select();
                 btn.Focus();
@@ -404,7 +404,7 @@ namespace Winforms_Demo
 
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = "espeak"; // The command to run eSpeak
-            startInfo.Arguments = $"\"{s}\""; // The text to be spoken
+            startInfo.Arguments = $"-v fr \"{s}\""; // The text to be spoken
             startInfo.UseShellExecute = false; // Do not use the shell execute process
             startInfo.CreateNoWindow = true; // Do not create a window
 
@@ -432,7 +432,7 @@ namespace Winforms_Demo
 
                 string category = clickedButton.Text;
                 Console.WriteLine(category);
-                MainPage.OpenPhrasesSub(category, this.ParentForm);
+                MainPage.OpenPhrasesSub_fr(category, this.ParentForm);
             }
         }
 

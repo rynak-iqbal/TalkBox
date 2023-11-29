@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34114.132
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winforms Demo", "Winforms Demo\Winforms Demo.csproj", "{E892F18D-F076-4CB7-BC62-CC7FA8F9CDB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalkBox_2", "Winforms Demo\TalkBox_2.csproj", "{E892F18D-F076-4CB7-BC62-CC7FA8F9CDB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B41F18B1-A743-4F11-9311-8CF1B0E9C6E1}
 	EndGlobalSection
 EndGlobal
