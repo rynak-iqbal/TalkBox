@@ -1,7 +1,7 @@
 # Talk Box
 
 Program made for our Talk Box project in GNG2101, Introduction to Product Development and Management for Engineers and Computer Scientists.
-Builds on this repository that we previously were using: https://github.com/rynak-iqbal/TalkBoxOld.
+Builds on this repository that we were previously using: https://github.com/rynak-iqbal/TalkBoxOld.
 All code is done by us
 
 
